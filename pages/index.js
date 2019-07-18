@@ -9,23 +9,36 @@ const App = props => (
   <Layout>
     <h2>Hello Next.js</h2>
     <div>
-      <ul>
+      <ul className="photo-list">
         {props.photos.map(photo => (
           <li key={photo.id}>
             <Link href= {`https://unsplash.com/photos/${photo.id}`}>
               <a>{photo.user.username}</a>
             </Link>
-            <img src = {photo.urls.thumb}/>
-
+            <img src = {photo.urls.small}/>
           </li>
         ))}
       </ul>
+      <style jsx>{`
+          .photo-list{
+            column-count: 3;
+          }
+          .photo-list > li{
+             display: inline-block;
+             margin: 10px;
+             text-align: center;
+          }
+          .photo-list > li >img{
+             display: block;
+          }
+        `}
+      </style>
     </div>
   </Layout>
 )
 
 App.getInitialProps = async function() {
-  const res = await fetch(`https://api.unsplash.com/photos/?client_id=${APIkey}`);
+  const res = await fetch(`https://api.unsplash.com/photos/?client_id=${APIkey}&per_page=30`);
   const data = await res.json();
 
   console.log(`Data fetched. Count: ${data.length}`);

@@ -1,12 +1,33 @@
 import Link from 'next/link';
 import Search from './Search';
+import { Z_FIXED } from 'zlib';
 
 const linkStyle = {
   marginRight: 15
 };
+const h2Style = {
+  margin: 0,
+  textAlign: 'center'
+};
+const headerStyle = {
+  position: 'fixed',
+  margin: 0,
+  padding: '15px 25px',
+  top: 0,
+  width: "100vw",
+  background: 'white',
+  zIndex: 5,
+  fontFamily: 'Arial, Tahoma'
+};
+const nextStyle = {
+  textAlign: 'center',
+  marginTop: 10
+}
+
 
 const Header = () => (
-  <div>
+  <div style={headerStyle}>
+  <h2 style={h2Style}>Unsplash photos</h2>
     <Link href="/">
       <a style={linkStyle}>Home</a>
     </Link>
@@ -14,6 +35,10 @@ const Header = () => (
       <a style={linkStyle}>About</a>
     </Link>
     <Search />
+    <div style={nextStyle}>
+      <button>Prev 30</button>
+      <button>Next 30</button>
+    </div>
   </div>
 );
 

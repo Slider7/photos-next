@@ -1,9 +1,9 @@
-import Layout from '../components/Layout.js';
+import Header from '../components/Header';
 
 export default function About() {
   return (
-    <Layout>
+    <Header>
       <p>This is the about page</p>
-    </Layout>
+    </Header>
   );
 }

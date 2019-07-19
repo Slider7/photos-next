@@ -1,14 +1,6 @@
 import Link from 'next/link';
-import Search from './Search';
 import { Z_FIXED } from 'zlib';
 
-const linkStyle = {
-  marginRight: 15
-};
-const h2Style = {
-  margin: 0,
-  textAlign: 'center'
-};
 const headerStyle = {
   position: 'fixed',
   margin: 0,
@@ -19,13 +11,16 @@ const headerStyle = {
   zIndex: 5,
   fontFamily: 'Arial, Tahoma'
 };
-const nextStyle = {
-  textAlign: 'center',
-  marginTop: 10
-}
 
+const linkStyle = {
+  marginRight: 15
+};
+const h2Style = {
+  margin: 0,
+  textAlign: 'center'
+};
 
-const Header = () => (
+const Header = (props) => (
   <div style={headerStyle}>
   <h2 style={h2Style}>Unsplash photos</h2>
     <Link href="/">
@@ -34,11 +29,7 @@ const Header = () => (
     <Link href="/about">
       <a style={linkStyle}>About</a>
     </Link>
-    <Search />
-    <div style={nextStyle}>
-      <button>Prev 30</button>
-      <button>Next 30</button>
-    </div>
+    {props.children}
   </div>
 );
 

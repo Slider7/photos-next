@@ -1,6 +1,8 @@
 import Header from './Header';
 import Search from './Search';
 
+import './main.css';
+
 const nextStyle = {
   textAlign: 'center',
   marginTop: 10

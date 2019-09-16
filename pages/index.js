@@ -23,4 +23,12 @@ App.getInitialProps = async function() {
   };
 };
 
+App.searchPhotos = async function(query) {
+  const res = await fetch(`https://api.unsplash.com/photos/?client_id=${APIkey}&query=${query}&per_page=30`);
+  const data = await res.json();
+  return {
+    photos: data
+  };
+}
+
 export default App;

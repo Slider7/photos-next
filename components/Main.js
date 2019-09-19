@@ -4,8 +4,8 @@ const Main = props => (
   <div className="photo-list">
     {props.data.map(photo => (
         <div key={photo.id} className='photo-cart'>
-          <Link href= {`/photo` }>
-            <img src = {photo.urls.small}/>
+          <Link href= { {pathname: '/photo', query: { id: photo.id } }}>
+            <img src = {photo.urls.small} alt=""/>
           </Link>
         </div>
       ))}

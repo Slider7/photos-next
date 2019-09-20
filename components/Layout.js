@@ -11,10 +11,10 @@ const nextStyle = {
 const Layout = props => (
   <div>
       <Header>
-        <Search />
+        <Search searchPhotos={props.searchPhotos} />
         <div style={nextStyle}>
-          <button>Prev 30</button>
-          <button>Next 30</button>
+          <button id='prev30' onClick = {(e) => {props.scrollPhotos(e)}}>Prev 30</button>
+          <button id='next30' onClick = {(e) => {props.scrollPhotos(e)}}>Next 30</button>
         </div>
       </Header>
     {props.children}

@@ -22,7 +22,7 @@ export default class PhotoPage extends React.Component {
   }
 
   render() {
-    const img = this.state.photo;
+    const img = this.props.photo;
     return (
       <div>
         <div className="container">

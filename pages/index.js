@@ -12,6 +12,7 @@ export default class App extends React.Component {
     this.searchPhotos = this.searchPhotos.bind(this);
     this.scrollPhotos = this.scrollPhotos.bind(this);
     this.getPhotos = this.getPhotos.bind(this);
+    this.resetPhotos = this.resetPhotos.bind(this);
 
     this.state = {
       images: [],
@@ -64,9 +65,8 @@ export default class App extends React.Component {
     } else {
       await this.getPhotos(pageNum);
     }
-    
   }
-    
+
   async componentDidMount() {
     const query = sessionStorage.getItem('photos-query');
     const pageNum = sessionStorage.getItem('photos-pageNum');
@@ -77,10 +77,23 @@ export default class App extends React.Component {
     }
   }
 
+  async resetPhotos () {
+    sessionStorage.setItem('photos-query', '');
+    sessionStorage.setItem('photos-pageNum', 0);
+    this.setState({
+      query: '',
+      pageNum: 1
+    })
+    await this.getPhotos(1);
+  }
+
   render() {
     console.log('render', this.state);
     return (
-      <Layout searchPhotos = {this.searchPhotos} scrollPhotos = {this.scrollPhotos}>
+      <Layout 
+        searchPhotos = {this.searchPhotos} 
+        scrollPhotos = {this.scrollPhotos} 
+        resetPhotos = {this.resetPhotos} >
         <Main data = {this.state.images} apiKey = {APIkey}/>
       </Layout>
     )

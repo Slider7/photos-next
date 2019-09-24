@@ -17,24 +17,19 @@ export default class App extends React.Component {
     this.state = {
       images: [],
       query: '',
-      pageNum: 1
+      pageNum: 1,
+      isLoading: true
     }
   }
 
-/*
-  static async getInitialProps() {
-    const res = await fetch(`https://api.unsplash.com/photos/?client_id=${APIkey}&per_page=30`)
-    const images = await res.json()
-    return { images }
-  }
-*/
   async getPhotos (pageNum = 1) {
     fetch(`https://api.unsplash.com/photos/?client_id=${APIkey}&per_page=30&page=${pageNum}`)
       .then(res => res.json())
       .then(jsonData => {
         this.setState({ 
           images : jsonData,
-          pageNum
+          pageNum,
+          isLoading: false
         });
       })
       .catch(error => console.error('Ошибка при запросе данных: ', error));      
@@ -43,15 +38,21 @@ export default class App extends React.Component {
   async searchPhotos (query, pageNum = 1) {
     const fetchResult =  await fetch(`https://api.unsplash.com/search/photos/?client_id=${APIkey}&query=${query}&page=${pageNum}&per_page=30`)
     const images = await fetchResult.json();
-    if (images.count === 0) {
-      alert('NO photos');
+    if (images.total === 0) {
+      this.setState({ 
+        images: [],
+        query: '',
+        pageNum: 1,
+        isLoading: false
+      })
     } else {
       sessionStorage.setItem('photos-query', query);
       sessionStorage.setItem('photos-pageNum', pageNum);
       this.setState({ 
         images: images.results,
         query,
-        pageNum
+        pageNum,
+        isLoading: false
       })
     }
   }
@@ -88,13 +89,17 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log('render', this.state);
     return (
       <Layout 
         searchPhotos = {this.searchPhotos} 
         scrollPhotos = {this.scrollPhotos} 
         resetPhotos = {this.resetPhotos} >
-        <Main data = {this.state.images} apiKey = {APIkey}/>
+        {
+          this.state.isLoading
+						? <h2 style = {{textAlign: "center", marginTop: "50%"}}>Loading...</h2>
+						: <Main data = {this.state.images} apiKey = {APIkey}/>
+        }
+        
       </Layout>
     )
   }

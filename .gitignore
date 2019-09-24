@@ -1,2 +1,10 @@
+# dependencies
 node_modules
-.next
+# production
+out
+build
+git /.next
+.next-export
+# misc
+.DS_Store
+npm-debug.log*

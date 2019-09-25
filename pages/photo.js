@@ -4,21 +4,11 @@ import Layout from '../components/Layout';
 const APIkey = 'add7029af557a934c8737dd2594d2345a4ae37d1bf154e524df5f07d9054daf2';
 
 export default class PhotoPage extends React.Component {
-  state = {
-    photo: null
-  }
-
   static async getInitialProps(query) {
     const { id } = query.query;
     const res = await fetch(`https://api.unsplash.com/photos/${id}/?client_id=${APIkey}`)
     const photo = await res.json()
     return { photo }
-  }
-
-  componentWillMount() {
-    this.setState({
-      photo: this.props.photo
-    })
   }
 
   render() {

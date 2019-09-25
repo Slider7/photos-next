@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -268,78 +268,6 @@ var Layout = function Layout(props) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Layout);
-
-/***/ }),
-
-/***/ "./components/Main.js":
-/*!****************************!*\
-  !*** ./components/Main.js ***!
-  \****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "C:\\Projects\\photos-next\\components\\Main.js";
-
-
-
-var Main = function Main(props) {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "photo-list",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 4
-    },
-    __self: this
-  }, props.data.length > 0 ? props.data.map(function (photo) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      key: photo.id,
-      className: "photo-cart",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 7
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-      href: {
-        pathname: '/photo',
-        query: {
-          id: photo.id
-        }
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 8
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      src: photo.urls.small,
-      alt: "Unplash Photo",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 9
-      },
-      __self: this
-    })));
-  }) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    style: {
-      textAlign: "center",
-      marginTop: "40px"
-    },
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }, "Nothing found"));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Main);
 
 /***/ }),
 
@@ -1568,86 +1496,16 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 /***/ }),
 
-/***/ "./pages/about.js":
+/***/ "./pages/photo.js":
 /*!************************!*\
-  !*** ./pages/about.js ***!
+  !*** ./pages/photo.js ***!
   \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return About; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Header */ "./components/Header.js");
-var _jsxFileName = "C:\\Projects\\photos-next\\pages\\about.js";
-
-
-var aboutStyle = {
-  textAlign: 'center',
-  marginTop: 40
-};
-function About() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Header__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 10
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    style: aboutStyle,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 11
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 12
-    },
-    __self: this
-  }, "\u0418\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441 \u0444\u043E\u0442\u043E\u0441\u0442\u043E\u043A\u0430 \u043D\u0430 \u043E\u0441\u043D\u043E\u0432\u0435 API Unsplash"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
-  }, "\u0412\u0435\u0431 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 \u043F\u043E \u0442\u0435\u0441\u0442\u043E\u0432\u043E\u043C\u0443 \u0437\u0430\u0434\u0430\u043D\u0438\u044E \u0434\u043B\u044F \u0432\u0430\u043A\u0430\u043D\u0441\u0438\u0438 \"\u0424\u0440\u043E\u043D\u0442\u0435\u043D\u0434-\u0440\u0430\u0437\u0440\u0430\u0431\u043E\u0442\u0447\u0438\u043A\", \u043A\u043E\u043C\u043F\u0430\u043D\u0438\u044F \xAB\u0420\u0430\u043A\u0435\u0442\u043D\u0430\u044F\xBB."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "mailto:kemalsh771@gmail.com",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }, "kemalsh771@gmail.com")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 15
-    },
-    __self: this
-  }, "2019")));
-}
-
-/***/ }),
-
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return App; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return PhotoPage; });
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/regenerator */ "./node_modules/@babel/runtime-corejs2/regenerator/index.js");
 /* harmony import */ var _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/asyncToGenerator */ "./node_modules/@babel/runtime-corejs2/helpers/esm/asyncToGenerator.js");
@@ -1655,17 +1513,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime-corejs2/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime-corejs2/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _components_Layout_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Layout.js */ "./components/Layout.js");
-/* harmony import */ var _components_Main_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/Main.js */ "./components/Main.js");
-/* harmony import */ var _about__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./about */ "./pages/about.js");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
-/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/inherits */ "./node_modules/@babel/runtime-corejs2/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! isomorphic-unfetch */ "isomorphic-unfetch");
+/* harmony import */ var isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 
 
 
@@ -1673,68 +1526,152 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-var _jsxFileName = "C:\\Projects\\photos-next\\pages\\index.js";
-
-
-
+var _jsxFileName = "C:\\Projects\\photos-next\\pages\\photo.js";
 
 
 
 var APIkey = 'add7029af557a934c8737dd2594d2345a4ae37d1bf154e524df5f07d9054daf2';
 
-var App =
+var PhotoPage =
 /*#__PURE__*/
 function (_React$Component) {
-  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_7__["default"])(App, _React$Component);
+  Object(_babel_runtime_corejs2_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(PhotoPage, _React$Component);
 
-  function App() {
-    var _this;
+  function PhotoPage() {
+    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, PhotoPage);
 
-    Object(_babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__["default"])(this, App);
-
-    _this = Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(App).call(this));
-    _this.searchPhotos = _this.searchPhotos.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
-    _this.scrollPhotos = _this.scrollPhotos.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
-    _this.getPhotos = _this.getPhotos.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
-    _this.resetPhotos = _this.resetPhotos.bind(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_6__["default"])(_this));
-    _this.state = {
-      images: [],
-      query: '',
-      pageNum: 1,
-      isLoading: true
-    };
-    return _this;
+    return Object(_babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, Object(_babel_runtime_corejs2_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(PhotoPage).apply(this, arguments));
   }
 
-  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(App, [{
-    key: "getPhotos",
+  Object(_babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__["default"])(PhotoPage, [{
+    key: "render",
+    value: function render() {
+      var img = this.props.photo;
+      return react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 17
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "container",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "photo-header",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "author",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 20
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
+        className: "author-img",
+        src: img.user.profile_image.medium,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 21
+        },
+        __self: this
+      }), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 22
+        },
+        __self: this
+      }, "Author: ", img.user.name), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+        href: img.user.links.html,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 23
+        },
+        __self: this
+      }, "@", img.user.instagram_username))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("h3", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 25
+        },
+        __self: this
+      }, img.description || ''), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
+        href: img.links.download,
+        className: "link-button",
+        target: "_blank",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 26
+        },
+        __self: this
+      }, "Download Page")), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("p", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 28
+        },
+        __self: this
+      }, "Likes: ", img.likes), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("div", {
+        className: "display_image",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 29
+        },
+        __self: this
+      }, react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("img", {
+        src: img.urls.regular,
+        alt: "",
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 30
+        },
+        __self: this
+      }))), react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("style", {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 33
+        },
+        __self: this
+      }, "\n              .display_image{\n                height: calc(100vh - 100px);\n              }\n              .display_image img {\n                height: 100%; \n                display: block\n              }\n              .container {\n                margin: 20px;\n                border-radius: 10px;\n                min-width: 320px;\n                align-content: center;\n                display: flex;\n                flex-direction: column;\n                align-items: center;\n                background: lavender;\n                color: #AD0044;\n                overflow: hidden;\n                box-sizing: border-box;\n                box-shadow: 2px 2px 5px 2px dimgrey;\n                padding-bottom: 10px;\n              }\n              .container > p{\n                margin: 4px auto 10px auto;\n                color: #333333;\n              }\n              .photo-header{\n                width: 90%;\n                margin: 10px auto;\n                display: flex;\n                flex-wrap: wrap;\n                justify-content: space-around;\n              }\n              .photo-header p{\n                margin: 0 auto;\n              }\n              .author{\n                font-size: 1.25em;\n                min-width: 320px;\n              }\n              .link-button{\n                font-size: 1.1rem;\n                color: #333333;\n                text-decoration: none;\n                min-width: 160px;\n                height: 42px;\n                border-radius: 8px;\n                padding: 10px 20px;\n                border: 1px solid grey;\n                background: lightgrey;\n                text-align: center;\n                box-sizing: border-box;\n              }\n              .author-img{\n                float: left;\n                border-radius: 50%;\n                margin: 10px;\n              }\n          "));
+    }
+  }], [{
+    key: "getInitialProps",
     value: function () {
-      var _getPhotos = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
+      var _getInitialProps = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
       /*#__PURE__*/
-      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var _this2 = this;
-
-        var pageNum,
-            _args = arguments;
+      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(query) {
+        var id, res, photo;
         return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                pageNum = _args.length > 0 && _args[0] !== undefined ? _args[0] : 1;
-                isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12___default()("https://api.unsplash.com/photos/?client_id=".concat(APIkey, "&per_page=30&page=").concat(pageNum)).then(function (res) {
-                  return res.json();
-                }).then(function (jsonData) {
-                  _this2.setState({
-                    images: jsonData,
-                    pageNum: pageNum,
-                    isLoading: false
-                  });
-                })["catch"](function (error) {
-                  return console.error('Ошибка при запросе данных: ', error);
+                id = query.query.id;
+                _context.next = 3;
+                return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_8___default()("https://api.unsplash.com/photos/".concat(id, "/?client_id=").concat(APIkey));
+
+              case 3:
+                res = _context.sent;
+                _context.next = 6;
+                return res.json();
+
+              case 6:
+                photo = _context.sent;
+                return _context.abrupt("return", {
+                  photo: photo
                 });
 
-              case 2:
+              case 8:
               case "end":
                 return _context.stop();
             }
@@ -1742,241 +1679,29 @@ function (_React$Component) {
         }, _callee);
       }));
 
-      function getPhotos() {
-        return _getPhotos.apply(this, arguments);
+      function getInitialProps(_x) {
+        return _getInitialProps.apply(this, arguments);
       }
 
-      return getPhotos;
+      return getInitialProps;
     }()
-  }, {
-    key: "searchPhotos",
-    value: function () {
-      var _searchPhotos = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
-      /*#__PURE__*/
-      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(query) {
-        var pageNum,
-            fetchResult,
-            images,
-            _args2 = arguments;
-        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                pageNum = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : 1;
-                _context2.next = 3;
-                return isomorphic_unfetch__WEBPACK_IMPORTED_MODULE_12___default()("https://api.unsplash.com/search/photos/?client_id=".concat(APIkey, "&query=").concat(query, "&page=").concat(pageNum, "&per_page=30"));
-
-              case 3:
-                fetchResult = _context2.sent;
-                _context2.next = 6;
-                return fetchResult.json();
-
-              case 6:
-                images = _context2.sent;
-
-                if (images.total === 0) {
-                  this.setState({
-                    images: [],
-                    query: '',
-                    pageNum: 1,
-                    isLoading: false
-                  });
-                } else {
-                  sessionStorage.setItem('photos-query', query);
-                  sessionStorage.setItem('photos-pageNum', pageNum);
-                  this.setState({
-                    images: images.results,
-                    query: query,
-                    pageNum: pageNum,
-                    isLoading: false
-                  });
-                }
-
-              case 8:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, this);
-      }));
-
-      function searchPhotos(_x) {
-        return _searchPhotos.apply(this, arguments);
-      }
-
-      return searchPhotos;
-    }()
-  }, {
-    key: "scrollPhotos",
-    value: function () {
-      var _scrollPhotos = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
-      /*#__PURE__*/
-      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(evt) {
-        var pageNum;
-        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                pageNum = this.state.pageNum;
-                if (evt.target.id === 'prev30' && pageNum > 1) pageNum -= 1;
-                if (evt.target.id === 'next30') pageNum += 1;
-
-                if (!this.state.query) {
-                  _context3.next = 8;
-                  break;
-                }
-
-                _context3.next = 6;
-                return this.searchPhotos(this.state.query, pageNum);
-
-              case 6:
-                _context3.next = 10;
-                break;
-
-              case 8:
-                _context3.next = 10;
-                return this.getPhotos(pageNum);
-
-              case 10:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3, this);
-      }));
-
-      function scrollPhotos(_x2) {
-        return _scrollPhotos.apply(this, arguments);
-      }
-
-      return scrollPhotos;
-    }()
-  }, {
-    key: "componentDidMount",
-    value: function () {
-      var _componentDidMount = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
-      /*#__PURE__*/
-      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
-        var query, pageNum;
-        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                query = sessionStorage.getItem('photos-query');
-                pageNum = sessionStorage.getItem('photos-pageNum');
-
-                if (!(query && pageNum)) {
-                  _context4.next = 7;
-                  break;
-                }
-
-                _context4.next = 5;
-                return this.searchPhotos(query, pageNum);
-
-              case 5:
-                _context4.next = 9;
-                break;
-
-              case 7:
-                _context4.next = 9;
-                return this.getPhotos(1);
-
-              case 9:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4, this);
-      }));
-
-      function componentDidMount() {
-        return _componentDidMount.apply(this, arguments);
-      }
-
-      return componentDidMount;
-    }()
-  }, {
-    key: "resetPhotos",
-    value: function () {
-      var _resetPhotos = Object(_babel_runtime_corejs2_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__["default"])(
-      /*#__PURE__*/
-      _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5() {
-        return _babel_runtime_corejs2_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
-          while (1) {
-            switch (_context5.prev = _context5.next) {
-              case 0:
-                sessionStorage.setItem('photos-query', '');
-                sessionStorage.setItem('photos-pageNum', 0);
-                this.setState({
-                  query: '',
-                  pageNum: 1
-                });
-                _context5.next = 5;
-                return this.getPhotos(1);
-
-              case 5:
-              case "end":
-                return _context5.stop();
-            }
-          }
-        }, _callee5, this);
-      }));
-
-      function resetPhotos() {
-        return _resetPhotos.apply(this, arguments);
-      }
-
-      return resetPhotos;
-    }()
-  }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Layout_js__WEBPACK_IMPORTED_MODULE_9__["default"], {
-        searchPhotos: this.searchPhotos,
-        scrollPhotos: this.scrollPhotos,
-        resetPhotos: this.resetPhotos,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 93
-        },
-        __self: this
-      }, this.state.isLoading ? react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement("h2", {
-        style: {
-          textAlign: "center",
-          marginTop: "50%"
-        },
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 99
-        },
-        __self: this
-      }, "Loading...") : react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement(_components_Main_js__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        data: this.state.images,
-        apiKey: APIkey,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 100
-        },
-        __self: this
-      }));
-    }
   }]);
 
-  return App;
-}(react__WEBPACK_IMPORTED_MODULE_8___default.a.Component);
+  return PhotoPage;
+}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
 
 
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!******************************!*\
-  !*** multi ./pages/index.js ***!
+  !*** multi ./pages/photo.js ***!
   \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Projects\photos-next\pages\index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! C:\Projects\photos-next\pages\photo.js */"./pages/photo.js");
 
 
 /***/ }),
@@ -2246,4 +1971,4 @@ module.exports = require("zlib");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=photo.js.map

@@ -2,7 +2,8 @@ import Header from '../components/Header';
 
 const aboutStyle = {
   textAlign: 'center',
-  marginTop: 40
+  marginTop: 40,
+  width: '95%'
 };
 
 export default function About() {

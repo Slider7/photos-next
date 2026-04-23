@@ -1,37 +1,20 @@
 import Link from 'next/link';
 import { Z_FIXED } from 'zlib';
 
-const headerStyle = {
-  position: 'fixed',
-  margin: 0,
-  padding: '15px 0',
-  top: 0,
-  width: '100%',
-  background: 'white',
-  zIndex: 5,
-  fontFamily: 'Arial, Tahoma'
-};
-
-const linkStyle = {
-  marginRight: 15
-};
-const h2Style = {
-  margin: 0,
-  marginBottom: '10px',
-  textAlign: 'center'
-};
-
-const Header = props => (
-  <div style={headerStyle}>
-    <h2 style={h2Style}>Unsplash photos</h2>
-    <Link href="/">
-      <a style={linkStyle}>Home</a>
-    </Link>
-    <Link href="/about">
-      <a style={linkStyle}>About</a>
-    </Link>
-    {props.children}
-  </div>
+/**
+ * Обновленный заголовок с использованием Tailwind CSS
+ */
+const Header = ({ children }) => (
+  <header className="fixed top-0 z-50 w-full backdrop-blur-md bg-white/70 border-b border-gray-200 py-4 px-6">
+    <div className="max-w-7xl mx-auto flex flex-col items-center gap-4">
+      <h2 className="text-2xl font-bold tracking-tight text-gray-900">Unsplash Photos</h2>
+      <nav className="flex gap-6 text-sm font-medium text-gray-600">
+        <Link href="/" className="hover:text-black transition-colors">Home</Link>
+        <Link href="/about" className="hover:text-black transition-colors">About</Link>
+      </nav>
+      {children}
+    </div>
+  </header>
 );
 
 export default Header;

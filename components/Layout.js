@@ -1,29 +1,56 @@
+import { useEffect, useRef } from 'react';
 import Header from './Header';
 import Search from './Search';
 
+// Импорт стилей (или используй Tailwind классы из предыдущего совета)
 import './main.css';
 
-const nextStyle = {
-  textAlign: 'center',
-  marginTop: 10
-}
+/**
+ * Основной макет приложения с поддержкой Infinite Scroll
+ */
+const Layout = ({ children, searchPhotos, scrollPhotos, hasMore }) => {
+  const sentinelRef = useRef(null);
 
-const resetStyle = {
-  margin: "0 20px" 
-}
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Если маяк внизу страницы стал виден — триггерим загрузку
+        if (entries[0].isIntersecting && hasMore) {
+          // Эмулируем клик "Next", который раньше делался вручную
+          scrollPhotos({ target: { id: 'next30' } });
+        }
+      },
+      { threshold: 0.1 }
+    );
 
-const Layout = props => (
-  <div>
+    if (sentinelRef.current) {
+      observer.observe(sentinelRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [scrollPhotos, hasMore]);
+
+  return (
+    <div className="layout-container">
       <Header>
-        <Search searchPhotos={props.searchPhotos} />
-        <div style={nextStyle}>
-          <button id='prev30' onClick = {(e) => {props.scrollPhotos(e)}}>Prev 30</button>
-          <button style={resetStyle} id='reset-btn' onClick = {props.resetPhotos}>Reset search</button>
-          <button id='next30' onClick = {(e) => {props.scrollPhotos(e)}}>Next 30</button>
-        </div>
+        <Search searchPhotos={searchPhotos} />
+        {/* Кнопки удалены для чистоты интерфейса */}
       </Header>
-    {props.children}
-  </div>
-);
+
+      <main className="content-wrapper">
+        {children}
+      </main>
+
+      {/* Маяк: когда пользователь доскроллит сюда, загрузятся новые фото */}
+      <div 
+        ref={sentinelRef} 
+        className="sentinel" 
+        style={{ height: '50px', textAlign: 'center' }}
+      >
+        {hasMore ? 'Загрузка новых фото...' : 'Вы посмотрели всё!'}
+      </div>
+    </div>
+  );
+};
 
 export default Layout;

@@ -1,27 +1,43 @@
+import { useEffect, useRef, useState } from 'react';
+
 /**
- * Сетка фотографий с эффектом наведения
+ * Галерея с бесконечной прокруткой
  */
-const Main = ({ data }) => {
-  if (data.length === 0) {
-    return <h3 className="text-center mt-20 text-gray-500">Nothing found</h3>;
-  }
+const Main = ({ data, fetchMore, hasMore }) => {
+  const sentinelRef = useRef(null);
+
+  useEffect(() => {
+    // Создаем наблюдателя
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      // Если маяк виден и есть что загружать — вызываем функцию загрузки
+      if (entry.isIntersecting && hasMore) {
+        fetchMore();
+      }
+    }, { threshold: 0.5 }); // Сработает, когда 50% маяка будет видно
+
+    if (sentinelRef.current) {
+      observer.observe(sentinelRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [fetchMore, hasMore]);
 
   return (
-    <main className="pt-44 pb-10 px-4 max-w-[1600px] mx-auto">
-      <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+    <div className="photo-container">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {data.map(photo => (
-          <div key={photo.id} className="break-inside-avoid overflow-hidden rounded-lg group relative">
-            <Link href={{ pathname: '/photo', query: { id: photo.id } }}>
-              <img 
-                src={photo.urls.small} 
-                alt="Unsplash" 
-                className="w-full object-cover hover:scale-105 transition-transform duration-500 ease-in-out cursor-pointer"
-              />
-            </Link>
+          <div key={photo.id} className="photo-card">
+            <img src={photo.urls.small} alt={photo.alt_description} />
           </div>
         ))}
       </div>
-    </main>
+
+      {/* Тот самый "маяк" в конце списка */}
+      <div ref={sentinelRef} className="h-10 w-full flex justify-center items-center">
+        {hasMore ? <p>Loading more...</p> : <p>You've reached the end!</p>}
+      </div>
+    </div>
   );
 };
 

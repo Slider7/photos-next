@@ -6,17 +6,17 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.21.1",
+    "dotenv": "^17.4.2",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
-  "devDependencies": {},
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "export": "next build && next export"
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider next",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider next start",
+    "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export"
   },
   "author": "kemalsh771@gmail.com",
   "license": "ISC"

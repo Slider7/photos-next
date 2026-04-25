@@ -1,9 +1,12 @@
+# env
+.env
+.env.local
 # dependencies
 node_modules
 # production
 out
 build
-git /.next
+.next
 .next-export
 # misc
 .DS_Store

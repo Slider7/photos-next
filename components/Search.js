@@ -1,27 +1,27 @@
 import { useState } from 'react';
 
-/**
- * Поиск с управляемым инпутом
- */
 const Search = ({ searchPhotos }) => {
   const [query, setQuery] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (query.trim()) searchPhotos(query);
+    if (query.trim()) searchPhotos(query.trim());
   };
 
   return (
-    <form onSubmit={handleSubmit} className="relative w-full max-w-2xl mx-auto">
-      <input 
+    <form onSubmit={handleSubmit} className="search-form">
+      <input
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         type="text"
-        placeholder="Search high-resolution photos..."
-        className="w-full pl-4 pr-12 py-3 rounded-full border border-gray-300 focus:ring-2 focus:ring-black outline-none transition-all shadow-sm"
+        placeholder="Search photos…"
+        className="search-input"
       />
-      <button type="submit" className="absolute right-3 top-1/2 -translate-y-1/2 p-2 hover:bg-gray-100 rounded-full transition-colors">
-        <img src="https://img.icons8.com/ios/50/000000/search--v1.png" className="w-5 h-5" alt="search" />
+      <button type="submit" className="search-btn" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
       </button>
     </form>
   );

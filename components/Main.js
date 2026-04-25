@@ -1,41 +1,39 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 
-/**
- * Галерея с бесконечной прокруткой
- */
 const Main = ({ data, fetchMore, hasMore }) => {
   const sentinelRef = useRef(null);
 
   useEffect(() => {
-    // Создаем наблюдателя
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      // Если маяк виден и есть что загружать — вызываем функцию загрузки
-      if (entry.isIntersecting && hasMore) {
-        fetchMore();
-      }
-    }, { threshold: 0.5 }); // Сработает, когда 50% маяка будет видно
-
-    if (sentinelRef.current) {
-      observer.observe(sentinelRef.current);
-    }
-
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) fetchMore(); },
+      { rootMargin: '200px' }
+    );
+    if (sentinelRef.current) observer.observe(sentinelRef.current);
     return () => observer.disconnect();
-  }, [fetchMore, hasMore]);
+  }, [fetchMore]);
 
   return (
-    <div className="photo-container">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div>
+      <div className="photo-grid">
         {data.map(photo => (
-          <div key={photo.id} className="photo-card">
-            <img src={photo.urls.small} alt={photo.alt_description} />
-          </div>
+          <Link key={photo.id} href={`/photo?id=${photo.id}`}>
+            <a className="photo-card">
+              <img
+                src={photo.urls.small}
+                alt={photo.alt_description || ''}
+                loading="lazy"
+              />
+              <div className="photo-overlay">
+                <span className="photo-author">{photo.user.name}</span>
+              </div>
+            </a>
+          </Link>
         ))}
       </div>
 
-      {/* Тот самый "маяк" в конце списка */}
-      <div ref={sentinelRef} className="h-10 w-full flex justify-center items-center">
-        {hasMore ? <p>Loading more...</p> : <p>You've reached the end!</p>}
+      <div ref={sentinelRef} className="sentinel">
+        {hasMore ? <div className="spinner" /> : "You've seen everything."}
       </div>
     </div>
   );
